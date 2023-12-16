@@ -24,7 +24,7 @@
     <link href="{{asset('/')}}assets/css/themes/layout/brand/dark.{{getFolder()}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('/')}}assets/css/themes/layout/aside/dark.{{getFolder()}}" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
-     <link rel="shortcut icon" href="{{asset('/')}}{{$globalSetting['logo_login']}} " />
+     <link rel="shortcut icon" href="{{asset('/')}}frontend/images/logo.webp " />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--begin yajra datatable-->
 
@@ -65,7 +65,7 @@
 <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <!--begin::Logo-->
     <a href="{{route('admin')}}">
-        <img alt="Logo" style="width: 40px;" src="{{asset('/')}}{{$globalSetting['logo']}}" />
+        <img alt="Logo" style="width: 40px;" src="{{asset('/')}}frontend/images/logo.webp" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
@@ -107,7 +107,7 @@
                 <!--begin::Logo-->
                 <a href="{{route('admin')}}"
                    class="brand-logo">
-                    <img alt="Logo" style="width: 50px;" src="{{asset('/')}}{{$globalSetting['logo']}}" />
+                    <img alt="Logo" style="height:50px;width: 200px;" src="{{asset('/')}}frontend/images/logo.webp" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Toggle-->

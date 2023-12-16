@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\CustomerController;
 use App\Http\Controllers\Dashboard\HomeController;
 use App\Http\Controllers\Dashboard\InstallmentRequestController;
 use App\Http\Controllers\Dashboard\InvoiceController;
+use App\Http\Controllers\Dashboard\RequestsController;
 use App\Http\Controllers\Dashboard\RoleController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\LawsuitController;
@@ -46,12 +47,23 @@ Route::group(
         Route::post('/update_profile', [AuthController::class, 'update'])->name('update_profile_post');
 
         // admins Route
+        Route::group(['prefix' => 'reservations'], function () {
+            $permission = 'reservations';
+            $controller = RequestsController::class;
+
+            Route::get('/', [$controller, 'index'])->name($permission)->middleware('permission:read-' . $permission);
+            Route::get('edit/{id}', [$controller, 'edit'])->name($permission . '.edit')->middleware('permission:update-' . $permission);
+            Route::post('update/{id}', [$controller, 'update'])->name($permission . '.update')->middleware('permission:update-' . $permission);
+            Route::post('change-activation/{admin}', [$controller, 'changeActivation'])->name($permission . '.change.activation')->middleware('permission:delete-' . $permission);
+        });
+
+        // admins Route
         Route::group(['prefix' => 'admins'], function () {
             $permission = 'admins';
             $controller = AdminController::class;
 
             Route::get('/', [$controller, 'index'])->name($permission)->middleware('permission:read-' . $permission);
-            Route::get('/history/{id}', [$controller, 'history'])->name($permission.'.history');
+            Route::get('/history/{id}', [$controller, 'history'])->name($permission . '.history');
             Route::get('create', [$controller, 'create'])->name($permission . '.create')->middleware('permission:create-' . $permission);
             Route::post('store', [$controller, 'store'])->name($permission . '.store')->middleware('permission:create-' . $permission);
             Route::get('edit/{id}', [$controller, 'edit'])->name($permission . '.edit')->middleware('permission:update-' . $permission);

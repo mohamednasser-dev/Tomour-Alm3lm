@@ -23,6 +23,15 @@
                     </a>
                 </li>
             @endcan
+            @can('read-admins')
+                <li class="menu-item menu-item-submenu @if(request()->segment(3) == 'reservations') menu-item-open @endif "
+                    aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('reservations')}}" class="menu-link menu-toggle">
+                        <i class="menu-icon  flaticon2-open-text-book"></i>
+                        <span class="menu-text">{{__('lang.reservations')}}</span>
+                    </a>
+                </li>
+            @endcan
 {{--            @can('read-roles')--}}
 {{--                <li class="menu-item menu-item-submenu @if(request()->segment(3) == 'roles') menu-item-open @endif "--}}
 {{--                    aria-haspopup="true" data-menu-toggle="hover">--}}

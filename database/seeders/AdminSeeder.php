@@ -25,24 +25,7 @@ class AdminSeeder extends Seeder
             'role_id' => '1',
         ]);
 
-        if (env('APP_DEBUG')) {
-            $chunks = 100;
-            $chunkSize = 10;
-            for ($i = 0; $i < $chunks; $i++) {
-                $data = [];
-                for ($j = 0; $j < $chunkSize; $j++) {
-                    $data[] = [
-                        'name' => fake()->name(),
-                        'admin_id' => 1,
-                        'email' => fake()->unique()->safeEmail(),
-                        'password' => '123456',
-                        'phone' => fake()->phoneNumber,
-                        'role_id' => '1',
-                    ];
-                }
-                DB::table('admins')->insert($data);
-            }
-        }
+
 
 
     }

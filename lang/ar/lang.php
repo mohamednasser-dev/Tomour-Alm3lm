@@ -190,4 +190,5 @@ return [
     'edit-lawsuit'=>  'تعديل مصاريف قضائية',
     'update-lawsuit'=> 'تحديث مصاريف قضائية',
     'delete-lawsuit'=> 'حذف مصاريف قضائية',
+    'reservations'=> 'استمارات التقديم',
 ];

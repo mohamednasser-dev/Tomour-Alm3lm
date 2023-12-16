@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
-    protected $guarded=['id'];
+    protected $guarded = ['id'];
 
     public function getRelations()
     {
@@ -19,20 +19,12 @@ class Reservation extends Model
      */
 
 
-
-
-
-
     /**
      * ***************************************************************************************
      */
     /**
      * START MUTATOR
      */
-
-
-
-
 
 
     /**
@@ -43,18 +35,12 @@ class Reservation extends Model
      */
 
 
-
-
-
-
     /**
      * ***************************************************************************************
      */
     /**
      * START METHODS
      */
-
-
 
 
     /**
@@ -64,8 +50,10 @@ class Reservation extends Model
      * START RELATIONS
      */
 
-
-
+    public function banks()
+    {
+        return $this->hasMany(ReservationBank::class, 'reservation_id');
+    }
 
 
 }

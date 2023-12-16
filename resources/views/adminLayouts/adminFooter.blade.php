@@ -12,8 +12,8 @@
         <div class="text-dark order-2 order-md-1">
 
             {{--            <span class="text-muted font-weight-bold mr-2">{{\Carbon\Carbon::now()->year}}</span>--}}
-            <a title="{{$globalSetting['copyright']}}" target="_blank"
-               class="text-dark-75 text-hover-primary">{{$globalSetting['copyright']}}</a>
+            <a title="" target="_blank"
+               class="text-dark-75 text-hover-primary"></a>
         </div>
         <!--end::Copyright-->
         <!--begin::Nav-->

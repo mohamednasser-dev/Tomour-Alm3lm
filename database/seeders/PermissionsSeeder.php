@@ -142,6 +142,34 @@ class PermissionsSeeder extends Seeder
                 'display_name' => 'delete admins',
             ],
 
+            // reservations permissions
+
+            [
+                'path' => 'reservations',
+                'name' => 'read-reservations',
+                'display_name' => 'read reservations',
+            ],
+            [
+                'path' => 'reservations',
+                'name' => 'update-reservations',
+                'display_name' => 'update reservations',
+            ],
+            [
+                'path' => 'reservations',
+                'name' => 'create-reservations',
+                'display_name' => 'create reservations',
+            ],
+            [
+                'path' => 'reservations',
+                'name' => 'delete-reservations',
+                'display_name' => 'delete reservations',
+            ],
+            [
+                'path' => 'reservations',
+                'name' => 'change-activation-reservations',
+                'display_name' => 'delete reservations',
+            ],
+
 
             // customer permissions
 
