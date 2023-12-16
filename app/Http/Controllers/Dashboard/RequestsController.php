@@ -6,6 +6,7 @@ use App\DataTables\Dashboard\ReservationDataTable;
 use App\Http\Controllers\GeneralController;
 use App\Models\Admin;
 use App\Models\Reservation;
+use Illuminate\Http\Request;
 
 class RequestsController extends GeneralController
 {
@@ -29,9 +30,20 @@ class RequestsController extends GeneralController
     public function edit($id)
     {
         // Get and Check Data
-        $data = $this->model->with('')->findorfail($id);
-        dd($data);
+        $data = $this->model->with('banks')->whereId($id)->firstOrFail();
+
         return view($this->viewPath($this->viewPath . 'edit'), compact('data'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        // Get and Check Data
+        $data = $this->model->with('banks')->whereId($id)->firstOrFail();
+        $data->status = $request->status;
+        $data->save();
+
+        return redirect()->route($this->route)->with('success', trans('lang.updated'));
     }
 
 
