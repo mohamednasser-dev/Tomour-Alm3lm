@@ -15,8 +15,8 @@ class AdminDataTable extends DataTable
             ->eloquent($query)
 
             ->addColumn('action', 'Dashboard.admin.parts.action')
-            ->addColumn('activation', 'Dashboard.admin.parts.activation')
-            ->addColumn('history', 'Dashboard.admin.parts.history_btn')
+//            ->addColumn('activation', 'Dashboard.admin.parts.activation')
+
             ->editColumn('created_by', function ($model) {
                 return $model->admin->name ?? '';
             })
@@ -53,8 +53,7 @@ class AdminDataTable extends DataTable
             Column::make('name')->title(trans('lang.name')),
             Column::make('email')->title(trans('lang.email')),
             Column::make('created_by')->title(trans('lang.created_by')),
-            Column::make('activation')->title(trans('lang.activation'))->visible(auth()->user()->can('change-activation-admins')),
-            Column::make('history')->title('سجل التحركات'),
+//            Column::make('activation')->title(trans('lang.activation')),
             Column::make('action')->title(trans('lang.action'))->visible(auth()->user()->can('delete-admins') || auth()->user()->can('update-admins') ),
         ];
     }
