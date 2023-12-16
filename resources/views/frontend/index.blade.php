@@ -17,7 +17,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/all.min.css">
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/main.css">
-    <title>هدايا - شركة تمور المعلم</title>
+    <title> شركة تمور المعلم</title>
 </head>
 
 <body>

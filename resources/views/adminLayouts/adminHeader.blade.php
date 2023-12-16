@@ -26,6 +26,14 @@
     <!--end::Layout Themes-->
      <link rel="shortcut icon" href="{{asset('/')}}frontend/images/logo.webp " />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" />
+
+    <style>
+        body{
+            font-family: "El Messiri"!important;
+            font-size: 14px;
+        }
+    </style>
     <!--begin yajra datatable-->
 
     <!--end yajra datatable-->

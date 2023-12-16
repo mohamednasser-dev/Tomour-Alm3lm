@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <!--begin::Head-->
 <head><base href="../../../../">
     <meta charset="utf-8" />
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://keenthemes.com/metronic" />
     <!--begin::Fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" />
     <!--end::Fonts-->
     <!--begin::Page Custom Styles(used by this page)-->
     <link href="{{asset('/')}}assets/css/pages/login/login-4.css" rel="stylesheet" type="text/css" />
@@ -24,7 +24,13 @@
     <link href="{{asset('/')}}assets/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('/')}}assets/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Themes-->
-    <link rel="shortcut icon" href="{{asset('/')}}assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('/')}}frontend/images/logo.webp " />
+    <style>
+        body{
+            font-family: "El Messiri"!important;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -34,7 +40,7 @@
     <!--begin::Login-->
     <div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid">
         <!--begin::Content-->
-        <div class="login-container order-2 order-lg-1 d-flex flex-center flex-row-fluid px-7 pt-lg-0 pb-lg-0 pt-4 pb-6 bg-white">
+        <div class="login-container order-1 order-lg-1 d-flex flex-center flex-row-fluid px-7 pt-lg-0 pb-lg-0 pt-4 pb-6 bg-white">
             <!--begin::Wrapper-->
             <div class="login-content d-flex flex-column pt-lg-0 pt-12">
                 <!--begin::Logo-->
@@ -45,13 +51,15 @@
                     <!--begin::Form-->
                     <form method="POST" action="{{ route('login') }}">
                     @csrf
-                        <div class="pb-13 pt-lg-0 pt-5">
-                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">اهلا بك في لوحة تحكم هايبر الزهران</h3>
+                        <div class="pb-13 pt-lg-0 pt-5 text-center">
+                            <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">اهلا بك في لوحة تحكم تمور المعلم</h3>
                            </div>
                     <!--begin::Title-->
                         <!--begin::Form group-->
                         <div class="form-group">
-                            <label class="font-size-h6 font-weight-bolder text-dark">@lang('lang.email')</label>
+                            <div class="d-flex justify-content-between mt-n5">
+                                <label class="font-size-h6 font-weight-bolder text-dark pt-5">@lang('lang.email')</label>
+                            </div>
                             <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0" type="text" name="email" autocomplete="off" />
 
                             @if($errors->has('email'))
@@ -87,14 +95,9 @@
         </div>
         <!--begin::Content-->
         <!--begin::Aside-->
-        <div class="login-aside order-1 order-lg-2 bgi-no-repeat bgi-position-x-right">
+        <div class="login-aside order-2 order-lg-2 bgi-no-repeat bgi-position-x-left">
             <div class="login-conteiner bgi-no-repeat bgi-position-x-right bgi-position-y-bottom" style="background-image: url({{asset('/')}}assets/media/svg/illustrations/login-visual-4.svg)  ">
-                <!--begin::Aside title-->
-            {{--    <h3 class="pt-lg-40 pl-lg-20 pb-lg-0 pl-10 py-20 m-0 d-flex justify-content-lg-start font-weight-boldest display5 display1-lg text-secondary">
 
-
-                </h3>--}}
-                <!--end::Aside title-->
             </div>
 
         </div>
