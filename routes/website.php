@@ -1,17 +1,6 @@
 <?php
 
-
-use App\Http\Controllers\Web\Auth\WebAuthenticatedSessionController;
-use App\Http\Controllers\Web\Auth\WebRegisteredUserController;
-use App\Http\Controllers\Web\CaloriesCounterController;
-use App\Http\Controllers\Web\CaloriesEquationsController;
-use App\Http\Controllers\Web\CartController;
-use App\Http\Controllers\Web\HealthyPlanController;
-use App\Http\Controllers\Web\InboxController;
-use App\Http\Controllers\Web\OrderController;
-use App\Http\Controllers\Web\PageController;
-use App\Http\Controllers\Web\ProductController;
-use App\Http\Controllers\Web\WebHomeController;
+use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -33,9 +22,8 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
 
-    Route::get('/', function () {
-        return redirect()->route('admin');
-    })->name('web-home');
+
+    Route::get('/', [HomeController::class, 'index'])->name('web-home');
 
 });
 
