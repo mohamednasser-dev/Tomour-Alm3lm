@@ -2,6 +2,9 @@
 
 return [
 
+
+    'canceled' => 'ملغية',
+
     'read-invoice-execution' => 'الفواتير المعدمة',
     'read-invoice-summary' => 'الملخص',
     'read-customer-black-list' => 'قائمة العملاء السوداء',
