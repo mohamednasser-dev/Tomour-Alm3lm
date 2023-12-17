@@ -41,6 +41,7 @@ class RequestsController extends GeneralController
         // Get and Check Data
         $data = $this->model->with('banks')->whereId($id)->firstOrFail();
         $data->status = $request->status;
+        $data->reject_reasons = $request->reject_reasons;
         $data->save();
 
         return redirect()->route($this->route)->with('success', trans('lang.updated'));

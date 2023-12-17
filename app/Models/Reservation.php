@@ -55,5 +55,10 @@ class Reservation extends Model
         return $this->hasMany(ReservationBank::class, 'reservation_id');
     }
 
+    public function city_relation()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
 
 }

@@ -115,7 +115,7 @@
                 <!--begin::Logo-->
                 <a href="{{route('admin')}}"
                    class="brand-logo">
-                    <img alt="Logo" style="height:50px;width: 200px;" src="{{asset('/')}}frontend/images/logo.webp" />
+                    <img alt="Logo" style="height:50px;width: 200px;" src="{{asset('/')}}frontend/images/logo_side.png" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Toggle-->
