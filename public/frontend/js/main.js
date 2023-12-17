@@ -71,21 +71,22 @@
     $(this).closest(".row").remove();
   });
 
+  const item = 1 ;
   // Add more fields
   $(".add-bank-btn").click(function () {
     var html4 =
       '<div class="row mb-3">' +
       '<div class="col">' +
-      '<input type="text" class="form-control" name="field1-4[]" placeholder="ادخل الاسم">' +
+      '<input type="text" required class="form-control" name="banks['+ item +'][name]" placeholder="ادخل الاسم">' +
       "</div>" +
       '<div class="col">' +
-      '<input type="text" class="form-control" name="field2-4[]" placeholder="ادخل العنوان">' +
+      '<input type="text" required class="form-control" name="banks['+ item +'][address]" placeholder="ادخل العنوان">' +
       "</div>" +
       '<div class="col">' +
-      '<input type="text" class="form-control" name="field3-4[]" placeholder=" أدخل أعلى رصيد ممدد ">' +
+      '<input type="text" required class="form-control" name="banks['+ item +'][max_balance]" placeholder=" أدخل أعلى رصيد ممدد ">' +
       "</div>" +
       '<div class="col">' +
-      '<input type="text" class="form-control" name="field4-4[]" placeholder="ادخل الغرض ">' +
+      '<input type="text" required class="form-control" name="banks['+ item +'][purpose]" placeholder="ادخل الغرض ">' +
       "</div>" +
       '<div class="col">' +
       '<button type="button" class="btn remove-btn"><i class="fa-solid fa-trash-can"></i></button>' +
