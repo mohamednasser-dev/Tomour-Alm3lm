@@ -945,10 +945,9 @@
                         <div class="mb-4">
                             <div class="row d-flex justify-content-between align-items-center">
                                 <button class="btn submit-btn" type="button" id="prev-3">السابق</button>
-                                <div style="width: 320px;">
-
+{{--                                <div style="width: 320px;">--}}
                                     <button class="btn send-btn me-3" type="submit">إرسال</button>
-                                </div>
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
