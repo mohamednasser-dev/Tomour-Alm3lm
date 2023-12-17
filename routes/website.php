@@ -24,6 +24,7 @@ Route::group(
 
 
     Route::get('/', [HomeController::class, 'index'])->name('web-home');
+    Route::post('/front/reservation/store', [HomeController::class, 'storeReservation'])->name('reservation.store');
 
 });
 
