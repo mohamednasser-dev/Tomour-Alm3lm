@@ -73,7 +73,7 @@
 <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
     <!--begin::Logo-->
     <a href="{{route('admin')}}">
-        <img alt="Logo" style="width: 40px;" src="{{asset('/')}}frontend/images/logo.webp" />
+        <img alt="Logo" style="width: 40px;" src="{{asset('/')}}frontend/images/logo_side.png" />
     </a>
     <!--end::Logo-->
     <!--begin::Toolbar-->
