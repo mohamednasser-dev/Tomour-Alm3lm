@@ -27,10 +27,14 @@
     <div class="slider">
         <h3>الإمتياز التجاري</h3>
         <h1>استمارة التقديم</h1>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
     <div class="content">
         <div class="container" id="container_div">
-           @yield('content')
+            @yield('content')
         </div>
     </div>
 </section>
@@ -44,7 +48,6 @@
 
 @include('sweetalert::alert', ['cdn' => "https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.12/sweetalert2.min.css"])
 @include('sweetalert::alert')
-
 
 
 <script>
