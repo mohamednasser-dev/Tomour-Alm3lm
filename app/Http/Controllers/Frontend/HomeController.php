@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Frontend\ReservationSearchRequest;
 use App\Http\Requests\Frontend\ReservationStoreRequest;
 use App\Models\Reservation;
-use App\Models\ReservationBank;
+use Illuminate\Http\Request;
 
 
 class HomeController extends Controller
@@ -49,4 +48,18 @@ class HomeController extends Controller
         return  view('frontend.search_result',compact('msg'));
     }
 
+    public function search(Request $request)
+    {
+        $reservation = Reservation::whereId($request->search)->first();
+        if($reservation){
+            if($reservation->status == 'rejected'){
+                $msg = 'تم رفض طلبك والسبب '.$reservation->reject_reasons ;
+            }else{
+                $msg = 'حالة الطلب رقم ' . $request->search.' هي '. trans('lang.'.$reservation->status) ;
+            }
+        }else{
+            $msg =  'الطلب غير موجود' ;
+        }
+        return  view('frontend.search_result',compact('msg'));
+    }
 }

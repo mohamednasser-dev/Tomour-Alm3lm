@@ -8,20 +8,23 @@
         @include('adminLayouts.errors')
         @include('adminLayouts.messages')
         <div class="form-body py-5">
+            <form action="{{route('reservation.search.now')}}" method="post" >
+                @csrf
             <div>
                 <label for="code" class="form-label">رقم الطلب :</label>
-                <input type="text" class="form-control" id="search" name="search" required/>
+                <input type="text" class="form-control" id="search" name="search" required />
             </div>
             <div class="row row-code" style="margin-top: 25px;justify-content: center;">
-                <div>
+
                     <button class="btn btn-warning submit-btn"
-                            style="background-color: #B08400; !important; color: white;" type="button" id="btn-search">
+                            style="background-color: #B08400; !important; color: white;" type="submit">
                         بحث
                     </button>
                     <a href="{{route('web-home')}}" class="btn btn-secondary submit-btn" type="button"
                        style="background-color: #6c757d !important; color: white">رجوع</a>
-                </div>
+
             </div>
+            </form>
         </div>
     </form>
 @endsection
