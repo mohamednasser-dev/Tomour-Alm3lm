@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-3" style="direction: ltr;">
                 <div style="margin-top: 46px;">
-                    <button class="btn btn-warning submit-btn" style="background-color: #B08400; !important; color: white;" type="button" id="btn-search">متابعة طلبك</button>
+                    <a href="{{route('reservation.search.page')}}" class="btn btn-warning submit-btn" style="background-color: #B08400; !important; color: white;" type="button" id="btn-search">متابعة طلبك</a>
                 </div>
             </div>
         </div>

@@ -16,6 +16,11 @@ class HomeController extends Controller
         return view('frontend.index');
     }
 
+    public function searchPage()
+    {
+        return view('frontend.search_page');
+    }
+
     public function storeReservation(ReservationStoreRequest $request)
     {
         $inputs = $request->validated();

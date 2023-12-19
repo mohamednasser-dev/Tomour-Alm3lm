@@ -26,6 +26,7 @@ Route::group(
     Route::get('/', [HomeController::class, 'index'])->name('web-home');
     Route::post('/front/reservation/store', [HomeController::class, 'storeReservation'])->name('reservation.store');
     Route::get('/reservation-search/{search}', [HomeController::class, 'searchReservation'])->name('reservation.search');
+    Route::get('/reservation/search/page', [HomeController::class, 'searchPage'])->name('reservation.search.page');
 
 });
 
