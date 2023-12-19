@@ -791,43 +791,43 @@
                                     السجل الائتماني أو التحقق منه:</h3>
                             </div>
                         </div>
-                        <div class="mb-0">
-                            <div class="row ">
-                                <div class="col">
-                                    <label class="form-label">الإسم</label>
-                                </div>
-                                <div class="col">
-                                    <label class="form-label">العنوان</label>
-                                </div>
-                                <div class="col">
-                                    <label class="form-label">الحد الأعلى للرصيد</label>
-                                </div>
-                                <div class="col">
-                                    <label class="form-label">الغرض</label>
-                                </div>
-                                <div class="col">
+{{--                        <div class="mb-0">--}}
+{{--                            <div class="row ">--}}
+{{--                                <div class="col">--}}
+{{--                                    <label class="form-label">الإسم</label>--}}
+{{--                                </div>--}}
+{{--                                <div class="col">--}}
+{{--                                    <label class="form-label">العنوان</label>--}}
+{{--                                </div>--}}
+{{--                                <div class="col">--}}
+{{--                                    <label class="form-label">الحد الأعلى للرصيد</label>--}}
+{{--                                </div>--}}
+{{--                                <div class="col">--}}
+{{--                                    <label class="form-label">الغرض</label>--}}
+{{--                                </div>--}}
+{{--                                <div class="col">--}}
 
-                                </div>
-                            </div>
-                        </div>
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="mb-4">
                             <div id="repeater4">
                                 <div class="row mb-3">
-                                    <div class="col">
+                                    <div class="col-md-6" style="margin-top: 10px;" >
                                         <input type="text" required class="form-control" name="banks[0][name]"
                                                placeholder="ادخل الاسم">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="margin-top: 10px;" >
                                         <input type="text" required class="form-control"
                                                name="banks[0][address]"
                                                placeholder="ادخل العنوان">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="margin-top: 10px;" >
                                         <input type="number" required class="form-control"
                                                name="banks[0][max_balance]"
                                                placeholder="أدخل أعلى رصيد ممدد ">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-md-6" style="margin-top: 10px;" >
                                         <input type="text" required class="form-control"
                                                name="banks[0][purpose]"
                                                placeholder="ادخل الغرض ">
@@ -941,19 +941,14 @@
                             <span class="text-danger"
                                   style="display: contents;">تطبق الشروط و الاحكام</span>
                         </div>
-
                         <div class="mb-4">
                             <div class="row d-flex justify-content-between align-items-center">
                                 <button class="btn submit-btn" type="button" id="prev-3">السابق</button>
-{{--                                <div style="width: 320px;">--}}
-                                    <button class="btn send-btn me-3" type="submit">إرسال</button>
-{{--                                </div>--}}
+                                <button class="btn send-btn me-3" type="submit">إرسال</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </form>

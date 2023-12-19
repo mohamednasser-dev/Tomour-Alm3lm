@@ -76,16 +76,16 @@
   $(".add-bank-btn").click(function () {
     var html4 =
       '<div class="row mb-3">' +
-      '<div class="col">' +
+      '<div class="col-md-6" style="margin-top: 10px;">' +
       '<input type="text" required class="form-control" name="banks['+ item +'][name]" placeholder="ادخل الاسم">' +
       "</div>" +
-      '<div class="col">' +
+      '<div class="col-md-6" style="margin-top: 10px;">' +
       '<input type="text" required class="form-control" name="banks['+ item +'][address]" placeholder="ادخل العنوان">' +
       "</div>" +
-      '<div class="col">' +
+      '<div class="col-md-6" style="margin-top: 10px;" >' +
       '<input type="text" required class="form-control" name="banks['+ item +'][max_balance]" placeholder=" أدخل أعلى رصيد ممدد ">' +
       "</div>" +
-      '<div class="col">' +
+      '<div class="col-md-6" style="margin-top: 10px;" >' +
       '<input type="text" required class="form-control" name="banks['+ item +'][purpose]" placeholder="ادخل الغرض ">' +
       "</div>" +
       '<div class="col">' +
