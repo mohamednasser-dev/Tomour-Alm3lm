@@ -33,7 +33,7 @@
         <br>
     </div>
     <div class="content">
-        <div class="container" id="container_div">
+        <div class="container" id="container_div" >
             @yield('content')
         </div>
     </div>
