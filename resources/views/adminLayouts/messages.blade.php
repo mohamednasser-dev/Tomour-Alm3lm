@@ -4,7 +4,7 @@
         <div class="alert-icon">
             <i class="flaticon2-checkmark"></i>
         </div>
-        <div class="alert-text h6">  {{ Session('success') }}</div>
+        <div class="alert-text h2">  {{ Session('success') }}</div>
         <div class="alert-close">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">

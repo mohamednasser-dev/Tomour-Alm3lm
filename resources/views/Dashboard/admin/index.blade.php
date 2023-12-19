@@ -1,7 +1,7 @@
 @php($title=trans('lang.admins'))
 @extends('adminLayouts.app')
 @section('title')
-   {{$title}}
+    {{$title}}
 @endsection
 @section('header')
 
@@ -25,19 +25,21 @@
 
     <div class="card">
         <div class="text-right">
-        <div class="card-header">
-            @can('create-admins')
-            <a href="{{route('admins.create')}}" class="btn btn-sm btn-light-primary font-weight-bolder mr-2">
-                <i class="fa fa-plus"></i>{{trans('lang.create')}}</a>
-            @endcan
+            <div class="card-header">
+                @can('create-admins')
+                    <a href="{{route('admins.create')}}" class="btn btn-sm btn-light-primary font-weight-bolder mr-2">
+                        <i class="fa fa-plus"></i>{{trans('lang.create')}}</a>
+                @endcan
+            </div>
         </div>
+
+
+        <div class="card-body">
+            <div class="table-responsive">
+                {!! $dataTable->table() !!}
+
+            </div>
         </div>
-
-
-            <div class="card-body">
-            {!! $dataTable->table() !!}
-
-    </div>
     </div>
 
 

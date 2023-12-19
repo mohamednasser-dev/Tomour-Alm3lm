@@ -1,7 +1,7 @@
 @php($title=trans('lang.reservations'))
 @extends('adminLayouts.app')
 @section('title')
-   {{$title}}
+    {{$title}}
 @endsection
 @section('header')
 
@@ -26,10 +26,12 @@
     <div class="card">
 
 
-            <div class="card-body">
-            {!! $dataTable->table() !!}
+        <div class="card-body">
+            <div class="table-responsive">
+                {!! $dataTable->table() !!}
 
-    </div>
+            </div>
+        </div>
     </div>
 
 

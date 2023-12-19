@@ -52,7 +52,7 @@ class AdminDataTable extends DataTable
             Column::make('id')->title(trans('lang.id')),
             Column::make('name')->title(trans('lang.name')),
             Column::make('email')->title(trans('lang.email')),
-            Column::make('created_by')->title(trans('lang.created_by')),
+            Column::make('created_by')->searchable(false)->title(trans('lang.created_by')),
 //            Column::make('activation')->title(trans('lang.activation')),
             Column::make('action')->title(trans('lang.action'))->visible(auth()->user()->can('delete-admins') || auth()->user()->can('update-admins') ),
         ];

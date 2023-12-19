@@ -19,6 +19,20 @@
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/all.min.css">
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/main.css">
     <title> شركة تمور المعلم</title>
+    <style>
+        label{
+            font-size: 18px!important;
+            /*font-weight: bold!important;*/
+            content: " *";
+            /*color: red;*/
+        }
+
+        .form-label::after{
+            content: " *";
+            color: red;
+        }
+
+    </style>
 </head>
 
 <body>
