@@ -79,7 +79,7 @@ class ReservationStoreRequest extends FormRequest
 
             'granted_brands' => 'nullable|string|max:2000',
             'city_id' => 'required|exists:cities,id',
-            'banks' => 'required|array',
+//            'banks' => 'required|array',
 
 
         ];

@@ -23,20 +23,9 @@ class HomeController extends Controller
         if($reservation_count == 0){
             $inputs['id'] = 100 ;
         }
-        $banks = $inputs['banks'];
         unset($inputs['banks']);
         $reservation = Reservation::create($inputs);
 
-        if(isset($banks)){
-            $bank_data['reservation_id'] = $reservation->id ;
-            foreach ($banks as $bank){
-                $bank_data['name'] = $bank['name'] ;
-                $bank_data['address'] = $bank['address'] ;
-                $bank_data['max_balance'] = $bank['max_balance'] ;
-                $bank_data['purpose'] = $bank['purpose'] ;
-                ReservationBank::create($bank_data);
-            }
-        }
         $mesage = 'تم اضافة طلبك بنجاح - رقم الطلب الخاص بك : '.$reservation->id ;
         return redirect()->back()->with('success', $mesage);
     }
