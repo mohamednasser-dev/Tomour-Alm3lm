@@ -66,6 +66,7 @@
 
 <script>
     $(document).ready(function () {
+
         $('#btn-search').click(function () {
             var search = $('#search').val();
             $.ajax({
@@ -78,6 +79,21 @@
                 }
             });
         });
+
+
+        // Get the checkbox element
+        var checkbox = document.getElementById('is_no_cr_num');
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                $('#c_r_num').hide();
+                $('#c_r_num').val('');
+                document.getElementById('c_r_num').removeAttribute('required');
+            } else {
+                $('#c_r_num').show();
+                document.getElementById('c_r_num').setAttribute('required','true');
+            }
+        });
+
     });
 
 </script>

@@ -39,6 +39,8 @@ return new class extends Migration
             $table->text('financial');
             $table->text('projects_owned');
             $table->string('c_r_num')->nullable()->change();
+
+
         });
     }
 

@@ -39,7 +39,7 @@ class ReservationStoreRequest extends FormRequest
                 Rule::unique('reservations', 'phone')
             ],
             'c_r_num' => [
-                'required',
+                'nullable',
                 Rule::unique('reservations', 'c_r_num')
             ],
             'address' => 'required|string|max:255',
@@ -55,7 +55,7 @@ class ReservationStoreRequest extends FormRequest
             'salary' => 'required|numeric',
             'have_granted_brand' => 'required|in:1,0',
             'granted_brands' => 'nullable|string|max:2000',
-            'city_id' => 'required|exists:cities,id',
+            'cities' => 'required|string|max:2000',
             'income_source' => 'required|string|max:2000',
             'financial' => 'required|string|max:2000',
             'projects_owned' => 'required|string|max:2000',
