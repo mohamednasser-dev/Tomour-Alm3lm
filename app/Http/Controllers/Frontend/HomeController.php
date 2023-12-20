@@ -41,9 +41,9 @@ class HomeController extends Controller
         $reservation = Reservation::whereId($search)->first();
         if($reservation){
             if($reservation->status == 'rejected'){
-                $msg = 'تم رفض طلبك والسبب '.$reservation->reject_reasons ;
+                $msg = 'تم رفض طلبك والسبب '. $reservation->reject_reasons ;
             }else{
-                $msg = 'حالة الطلب رقم ' . $search.' هي '. trans('lang.'.$reservation->status) ;
+                $msg = 'حالة الطلب رقم ' . $reservation->id .' هي '. trans('lang.'.$reservation->status) ;
             }
         }else{
             $msg =  'الطلب غير موجود' ;
@@ -58,7 +58,7 @@ class HomeController extends Controller
             if($reservation->status == 'rejected'){
                 $msg = 'تم رفض طلبك والسبب '.$reservation->reject_reasons ;
             }else{
-                $msg = 'حالة الطلب رقم ' . $request->search.' هي '. trans('lang.'.$reservation->status) ;
+                $msg = 'حالة الطلب رقم ' . $reservation->id.' هي '. trans('lang.'.$reservation->status) ;
             }
         }else{
             $msg =  'الطلب غير موجود' ;
