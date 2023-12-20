@@ -2,9 +2,9 @@
 
 namespace App\DataTables\Dashboard;
 
-use App\Models\Admin;
 use App\Models\Reservation;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
 
@@ -17,17 +17,30 @@ class ReservationDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', 'Dashboard.reservations.parts.action')
             ->editColumn('created_at', function ($model) {
-                return  Carbon::parse($model->created_at)->diffForHumans();
+                return Carbon::parse($model->created_at)->diffForHumans();
             })
             ->editColumn('status', function ($model) {
-                return  trans('lang.'.$model->status);
+                return trans('lang.' . $model->status);
             })
             ->rawColumns(['action', 'id']);
     }
 
-    public function query(Reservation $model)
+    public function query(Reservation $model, Request $request)
     {
-        return $model->newQuery();
+        $q = $model->newQuery();
+        if ($request->is_employee) {
+            $q->where("is_employee", 1);
+        }
+        if ($request->is_lawsuit) {
+            $q->where("is_lawsuit", 1);
+        }
+        if ($request->c_r_num) {
+            $q->whereNotNull("c_r_num");
+        }
+        if ($request->is_rights) {
+            $q->where("is_rights", 1);
+        }
+        return $q;
     }
 
     public function html()

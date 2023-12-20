@@ -25,7 +25,88 @@
 
     <div class="card">
 
+        <div class="card-header border-0 pt-5">
 
+            <div class="card-toolbar">
+
+                <div class="dropdown dropdown-inline mr-2">
+                    <button type="button" class="btn btn-light-info font-weight-bolder dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <span class="svg-icon svg-icon-md"><!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo1\dist/../src/media/svg/icons\Text\Filter.svg--><svg
+                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                         height="24px" viewBox="0 0 24 24" version="1.1">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <path
+            d="M5,4 L19,4 C19.2761424,4 19.5,4.22385763 19.5,4.5 C19.5,4.60818511 19.4649111,4.71345191 19.4,4.8 L14,12 L14,20.190983 C14,20.4671254 13.7761424,20.690983 13.5,20.690983 C13.4223775,20.690983 13.3458209,20.6729105 13.2763932,20.6381966 L10,19 L10,12 L4.6,4.8 C4.43431458,4.5790861 4.4790861,4.26568542 4.7,4.1 C4.78654809,4.03508894 4.89181489,4 5,4 Z"
+            fill="#000000"/>
+    </g>
+</svg><!--end::Svg Icon--></span>
+                        فلتر
+
+                    </button>
+                    <!--begin::Dropdown Menu-->
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="">
+                        <!--begin::Navigation-->
+                        <ul class="navi flex-column navi-hover py-2">
+
+                            <li class="navi-item">
+                                <form method="get" id="form" action="" enctype="multipart/form-data">
+                                    <div class="mb-4">
+                                        &nbsp;&nbsp;
+                                        <div class="form-check form-check-inline form-check-reverse">
+                                            <label class="form-check-label pe-2 ps-5"
+                                                   for="rightsInlineRadio1"> هل انت موظف ؟</label> &nbsp;&nbsp;
+                                            <input class="form-check-input" type="checkbox" name="is_employee"
+                                                   id="rightsInlineRadio1" value="1"
+                                                   @if(request()->is_employee) checked @endif>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        &nbsp;&nbsp;
+                                        <div class="form-check form-check-inline form-check-reverse">
+                                            <label class="form-check-label pe-2 ps-5"
+                                                   for="rightsInlineRadio2"> هل يوجد سجل تجاري؟
+                                            </label> &nbsp;&nbsp;
+                                            <input class="form-check-input" type="checkbox" name="c_r_num"
+                                                   id="rightsInlineRadio2" value="1"
+                                                   @if(request()->c_r_num) checked @endif>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        &nbsp;&nbsp;
+                                        <div class="form-check form-check-inline form-check-reverse">
+                                            <label class="form-check-label pe-2 ps-5"
+                                                   for="rightsInlineRadio3">هل يوجد دعوي قضائية ؟
+                                                 </label> &nbsp;&nbsp;
+                                            <input class="form-check-input" type="checkbox" name="is_lawsuit"
+                                                   id="rightsInlineRadio3" value="1"
+                                                   @if(request()->is_lawsuit) checked @endif>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        &nbsp;&nbsp;
+                                        <div class="form-check form-check-inline form-check-reverse">
+                                            <label class="form-check-label pe-2 ps-5"
+                                                   for="rightsInlineRadio4">هل ترغب بالحصول على حقوق الامتياز لتمور
+                                                المعلم؟</label> &nbsp;&nbsp;
+                                            <input class="form-check-input" type="checkbox" name="is_rights"
+                                                   id="rightsInlineRadio4" value="1"
+                                                   @if(request()->is_rights) checked @endif>
+                                        </div>
+                                    </div>
+                                    &nbsp;&nbsp;
+                                    <button type="submit" class="btn btn-info">بحث</button>
+                                </form>
+                            </li>
+
+                        </ul>
+                        <!--end::Navigation-->
+                    </div>
+                    <!--end::Dropdown Menu-->
+                </div>
+            </div>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 {!! $dataTable->table() !!}
