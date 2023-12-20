@@ -11,7 +11,7 @@
             <form action="{{route('reservation.search.now')}}" method="post" >
                 @csrf
             <div>
-                <label for="code" class="form-label">رقم الطلب :</label>
+                <label for="code" class="form-label">رقم الهوية :</label>
                 <input type="text" class="form-control" id="search" name="search" required />
             </div>
             <div class="row row-code" style="margin-top: 25px;justify-content: center;">

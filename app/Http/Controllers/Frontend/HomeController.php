@@ -27,9 +27,12 @@ class HomeController extends Controller
         if($reservation_count == 0){
             $inputs['id'] = 100 ;
         }
-        unset($inputs['banks']);
-        $reservation = Reservation::create($inputs);
+        $exists_old_reservation = Reservation::where('id_number',$inputs['id_number'])->first();
+        if($exists_old_reservation){
+            return redirect()->back()->with('error', ' لم يتم الحفظ , هناك طلب تم تقديمه من قبل برقم الهويه المضاف ');
 
+        }
+        $reservation = Reservation::create($inputs);
         $mesage = 'تم اضافة طلبك بنجاح - رقم الطلب الخاص بك : '.$reservation->id ;
         return redirect()->back()->with('success', $mesage);
     }
@@ -50,7 +53,7 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $reservation = Reservation::whereId($request->search)->first();
+        $reservation = Reservation::where('id_number',$request->search)->first();
         if($reservation){
             if($reservation->status == 'rejected'){
                 $msg = 'تم رفض طلبك والسبب '.$reservation->reject_reasons ;

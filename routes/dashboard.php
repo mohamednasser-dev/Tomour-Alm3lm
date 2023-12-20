@@ -63,7 +63,6 @@ Route::group(
             $controller = AdminController::class;
 
             Route::get('/', [$controller, 'index'])->name($permission)->middleware('permission:read-' . $permission);
-            Route::get('/history/{id}', [$controller, 'history'])->name($permission . '.history');
             Route::get('create', [$controller, 'create'])->name($permission . '.create')->middleware('permission:create-' . $permission);
             Route::post('store', [$controller, 'store'])->name($permission . '.store')->middleware('permission:create-' . $permission);
             Route::get('edit/{id}', [$controller, 'edit'])->name($permission . '.edit')->middleware('permission:update-' . $permission);

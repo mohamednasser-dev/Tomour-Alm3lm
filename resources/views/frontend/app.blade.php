@@ -62,7 +62,7 @@
 
 @include('sweetalert::alert', ['cdn' => "https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.12/sweetalert2.min.css"])
 @include('sweetalert::alert')
-
+@stack('scripts')
 
 <script>
     $(document).ready(function () {

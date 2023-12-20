@@ -20,7 +20,7 @@ class AdminDataTable extends DataTable
             ->editColumn('created_by', function ($model) {
                 return $model->admin->name ?? '';
             })
-            ->rawColumns(['action','activation','id','history']);
+            ->rawColumns(['action','activation','id']);
     }
 
     public function query(Admin $model)

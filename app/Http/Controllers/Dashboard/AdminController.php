@@ -6,11 +6,6 @@ use App\DataTables\Dashboard\AdminDataTable;
 use App\Http\Controllers\GeneralController;
 use App\Http\Requests\Dashboard\AdminRequest;
 use App\Models\Admin;
-use App\Models\Customer;
-use App\Models\InvoiceInstallments;
-use App\Models\InvoiceInstallmentsHistory;
-use App\Models\LawSuitHistory;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
@@ -31,14 +26,6 @@ class AdminController extends GeneralController
         return $dataTable->render('Dashboard.admin.index');
     }
 
-    public function history($id)
-    {
-        $installments = InvoiceInstallmentsHistory::where('admin_id', $id)->orderBy('created_at', 'asc')->paginate(10);
-        $customers = Customer::where('admin_id', $id)->orderBy('created_at', 'asc')->paginate(10);
-        $law = LawSuitHistory::where('admin_id', $id)->orderBy('created_at', 'asc')->paginate(10);
-        return view($this->viewPath($this->viewPath . 'history'), compact('installments', 'law', 'customers'));
-
-    }
 
 
     private function roles()

@@ -43,8 +43,6 @@ class ReservationStoreRequest extends FormRequest
                 Rule::unique('reservations', 'c_r_num')
             ],
             'address' => 'required|string|max:255',
-            'city' => 'required|string|max:255',
-            'government' => 'required|string|max:255',
             'is_lawsuit' => 'required|in:1,0',
             'is_employee' => 'required|in:1,0',
             'how_know' => 'required|string|max:2000',
@@ -54,33 +52,13 @@ class ReservationStoreRequest extends FormRequest
             'is_follow' => 'required|in:1,0',
             'is_financial' => 'required|in:1,0',
             'company_name' => 'required|string|max:255',
-
             'salary' => 'required|numeric',
-            'rewards' => 'required|numeric',
-            'dividends_interest' => 'required|numeric',
-            'real_estate_income' => 'required|numeric',
-            'profits' => 'required|numeric',
-            'other_income' => 'required|numeric',
-            'total' => 'required|numeric',
-            'cash_in_bank' => 'required|numeric',
-            'profits_sharing' => 'required|numeric',
-            'guarantees' => 'required|numeric',
-            'money_papers' => 'required|numeric',
-            'real_estate_value' => 'required|numeric',
-            'other_properties' => 'required|numeric',
-            'total_assets' => 'required|numeric',
-            'notes_loans' => 'required|numeric',
-            'accounts_bills_payable' => 'required|numeric',
-            'mortgages' => 'required|numeric',
-            'debt' => 'required|numeric',
-            'total_liabilities' => 'required|numeric',
-            'net_worth' => 'required|numeric',
             'have_granted_brand' => 'required|in:1,0',
-
             'granted_brands' => 'nullable|string|max:2000',
             'city_id' => 'required|exists:cities,id',
-//            'banks' => 'required|array',
-
+            'income_source' => 'required|string|max:2000',
+            'financial' => 'required|string|max:2000',
+            'projects_owned' => 'required|string|max:2000',
 
         ];
     }
