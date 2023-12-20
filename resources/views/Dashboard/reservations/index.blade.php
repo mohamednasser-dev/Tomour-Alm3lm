@@ -56,7 +56,7 @@
                                         &nbsp;&nbsp;
                                         <div class="form-check form-check-inline form-check-reverse">
                                             <label class="form-check-label pe-2 ps-5"
-                                                   for="rightsInlineRadio1"> هل انت موظف ؟</label> &nbsp;&nbsp;
+                                                   for="rightsInlineRadio1">  موظف </label> &nbsp;&nbsp;
                                             <input class="form-check-input" type="checkbox" name="is_employee"
                                                    id="rightsInlineRadio1" value="1"
                                                    @if(request()->is_employee) checked @endif>
@@ -66,7 +66,7 @@
                                         &nbsp;&nbsp;
                                         <div class="form-check form-check-inline form-check-reverse">
                                             <label class="form-check-label pe-2 ps-5"
-                                                   for="rightsInlineRadio2"> هل يوجد سجل تجاري؟
+                                                   for="rightsInlineRadio2">  يوجد سجل تجاري
                                             </label> &nbsp;&nbsp;
                                             <input class="form-check-input" type="checkbox" name="c_r_num"
                                                    id="rightsInlineRadio2" value="1"
@@ -77,7 +77,7 @@
                                         &nbsp;&nbsp;
                                         <div class="form-check form-check-inline form-check-reverse">
                                             <label class="form-check-label pe-2 ps-5"
-                                                   for="rightsInlineRadio3">هل يوجد دعوي قضائية ؟
+                                                   for="rightsInlineRadio3"> يوجد دعوي قضائية
                                                  </label> &nbsp;&nbsp;
                                             <input class="form-check-input" type="checkbox" name="is_lawsuit"
                                                    id="rightsInlineRadio3" value="1"
@@ -88,8 +88,8 @@
                                         &nbsp;&nbsp;
                                         <div class="form-check form-check-inline form-check-reverse">
                                             <label class="form-check-label pe-2 ps-5"
-                                                   for="rightsInlineRadio4">هل ترغب بالحصول على حقوق الامتياز لتمور
-                                                المعلم؟</label> &nbsp;&nbsp;
+                                                   for="rightsInlineRadio4">يرغب بالحصول على حقوق الامتياز لتمور
+                                                المعلم </label> &nbsp;&nbsp;
                                             <input class="form-check-input" type="checkbox" name="is_rights"
                                                    id="rightsInlineRadio4" value="1"
                                                    @if(request()->is_rights) checked @endif>
