@@ -520,7 +520,7 @@
                                                 id="status_select">
                                             <option selected disabled></option>
                                             <option @if($data->status == "pending") selected
-                                                    @endif value="pending">{{trans('lang.pending')}}</option>
+                                                 disabled    @endif value="pending">{{trans('lang.pending')}}</option>
                                             <option @if($data->status == "accepted") selected
                                                     @endif value="accepted">{{trans('lang.accepted')}}</option>
                                             <option @if($data->status == "rejected") selected
