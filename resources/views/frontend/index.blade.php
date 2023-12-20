@@ -25,12 +25,14 @@
             <div class="row">
                 <div class="mb-4">
                     <label for="name" class="form-label">الاسم رباعي</label>
-                    <input type="text" required name="full_name" class="form-control" id="full_name" value="{{old('full_name')}}"
+                    <input type="text" required name="full_name" class="form-control" id="full_name"
+                           value="{{old('full_name')}}"
                            placeholder="ادخل الاسم رباعي">
                 </div>
                 <div class="mb-4">
                     <label for="id_number" class="form-label">رقم الهوية</label>
-                    <input type="text" required name="id_number" class="form-control" id="id_number" value="{{old('id_number')}}"
+                    <input type="text" required name="id_number" class="form-control" id="id_number"
+                           value="{{old('id_number')}}"
                            placeholder="ادخل رقم الهوية ">
                 </div>
                 <div class="mb-4">
@@ -55,17 +57,21 @@
                            placeholder="ادخل البريد الإلكتروني " value="{{old('email')}}">
                 </div>
                 <div class="mb-4">
+                    <label class="form-label">لايوجد اي سجل
+                        تجاري</label>  &nbsp; &nbsp;
+                    <input type="checkbox" class="form-check-input" id="is_no_cr_num">
+                </div>
+                <div class="mb-4" id="c_r_num">
                     <label for="c_r_num" class="form-label">رقم السجل التجارى</label>
-                    &nbsp; &nbsp; &nbsp;
-                    <input type="checkbox" class="form-check-input" id="is_no_cr_num"> &nbsp; <label>لايوجد اي سجل
-                        تجاري</label>
-                    <input type="number" required name="c_r_num"  value="{{old('c_r_num')}}" class="form-control" id="c_r_num"
+
+                    <input type="number" required name="c_r_num" value="{{old('c_r_num')}}" class="form-control"
+                           id="c_r_num"
                            placeholder="ادخل رقم السجل التجارى ">
                 </div>
                 <div class="mb-4">
                     <label for="address" class="form-label">العنوان</label>
                     <input type="text" required name="address" class="form-control" id="address"
-                           placeholder="ادخل العنوان" value="{{old('address')}}" >
+                           placeholder="ادخل العنوان" value="{{old('address')}}">
                 </div>
 
                 {{--                <div class="mb-4">--}}
@@ -89,7 +95,7 @@
                     <div class="question ">
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_lawsuit"
-                                   id="stillLawsuitInlineRadio1" value="1" required >
+                                   id="stillLawsuitInlineRadio1" value="1" required>
                             <label class="form-check-label pe-2 ps-5"
                                    for="stillLawsuitInlineRadio1">نعم</label>
                         </div>
@@ -106,7 +112,7 @@
                     <div class="question ">
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_employee"
-                                   id="workTypeInlineRadio1" value="1" required >
+                                   id="workTypeInlineRadio1" value="1" required>
                             <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">قطاع
                                 خاص</label>
                         </div>
@@ -121,14 +127,15 @@
                 <div class="mb-4">
                     <label for="company_name" class="form-label">اسم الجهة او الشركة</label>
                     <input type="text" name="company_name" class="form-control" id="company_name"
-                           placeholder="" value="{{old('company_name')}}" >
+                           placeholder="" value="{{old('company_name')}}">
                 </div>
                 <div class="mb-4">
                     <label for="income_source" class="form-label">مصادر الدخل ؟ </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="income_source" class="form-control"
                                   placeholder="برجاء تحديد مصادر الدخل الشهرية"
-                                  aria-describedby="addon-currency" id="income_source">{{old('income_source')}}</textarea>
+                                  aria-describedby="addon-currency"
+                                  id="income_source">{{old('income_source')}}</textarea>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -137,7 +144,7 @@
                         <span class="input-group-text" id="addon-currency">ر.س</span>
                         <input type="number" required name="salary" class="form-control"
                                placeholder="الدخل الشهري" aria-label="currency"
-                               aria-describedby="addon-currency" id="salary" value="{{old('salary')}}" >
+                               aria-describedby="addon-currency" id="salary" value="{{old('salary')}}">
                     </div>
                 </div>
                 <div class="mb-4">
@@ -153,7 +160,8 @@
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="projects_owned" class="form-control"
                                   placeholder="برجاء كتابة المشاريع المملوكة و القائمة "
-                                  aria-describedby="addon-currency" id="projects_owned">{{old('projects_owned')}}</textarea>
+                                  aria-describedby="addon-currency"
+                                  id="projects_owned">{{old('projects_owned')}}</textarea>
                     </div>
                 </div>
 
@@ -163,7 +171,7 @@
                     <div class="question ">
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="have_granted_brand"
-                                   id="relocateInlineRadio1" value="1" required >
+                                   id="relocateInlineRadio1" value="1" required>
                             <label class="form-check-label pe-2 ps-5"
                                    for="relocateInlineRadio1">نعم</label>
                         </div>
@@ -182,12 +190,14 @@
                 </div>
                 <div class="mb-4">
                     <label for="how_know" class="form-label">ما مدى علمك بتمور المعلم؟</label>
-                    <input type="text" required name="how_know" class="form-control" id="how_know" value="{{old('how_know')}}" >
+                    <input type="text" required name="how_know" class="form-control" id="how_know"
+                           value="{{old('how_know')}}">
                 </div>
                 <div class="mb-4">
                     <label for="how_satisfied" class="form-label">ما مدى رضاك على علامة تمور
                         المعلم؟ </label>
-                    <input type="text" required name="how_satisfied" class="form-control" value="{{old('how_satisfied')}}"
+                    <input type="text" required name="how_satisfied" class="form-control"
+                           value="{{old('how_satisfied')}}"
                            id="how_satisfied">
                 </div>
                 <div class="mb-4">
@@ -195,7 +205,7 @@
                     <div class="question ">
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_rights"
-                                   id="rightsInlineRadio1" value="1" required >
+                                   id="rightsInlineRadio1" value="1" required>
                             <label class="form-check-label pe-2 ps-5"
                                    for="rightsInlineRadio1">نعم</label>
                         </div>
@@ -237,7 +247,7 @@
                     <div class="question ">
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_financial"
-                                   id="abilityInlineRadio1" value="1" required >
+                                   id="abilityInlineRadio1" value="1" required>
                             <label class="form-check-label pe-2 ps-5"
                                    for="abilityInlineRadio1">نعم</label>
                         </div>
