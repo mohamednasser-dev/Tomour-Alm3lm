@@ -31,8 +31,9 @@
                 </div>
                 <div class="mb-4">
                     <label for="id_number" class="form-label">رقم الهوية</label>
-                    <input type="text" required name="id_number" class="form-control" id="id_number"
+                    <input type="number" required name="id_number" class="form-control" id="id_number"
                            value="{{old('id_number')}}"
+                           pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;"
                            placeholder="ادخل رقم الهوية ">
                 </div>
                 <div class="mb-4">
@@ -48,6 +49,7 @@
                             </span>
                         </div>
                         <input type="number" required name="phone" class="form-control" id="phone"
+                               pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;"
                                placeholder="ادخل رقم الجوال" value="{{old('phone')}}">
                     </div>
                 </div>
@@ -57,11 +59,23 @@
                            placeholder="ادخل البريد الإلكتروني " value="{{old('email')}}">
                 </div>
                 <div class="mb-4">
-                    <label class="form-label">لايوجد اي سجل
-                        تجاري</label>  &nbsp; &nbsp;
-                    <input type="checkbox" class="form-check-input" id="is_no_cr_num">
+                    <label class="form-label">هل يوجد سجل
+                        تجاري؟</label> &nbsp; &nbsp;
+                    {{--                    <input type="checkbox" class="form-check-input" id="is_no_cr_num">--}}
+                    <div class="question ">
+                        <div class="form-check form-check-inline form-check-reverse">
+                            <input class="form-check-input" type="radio" name="is_no_cr_num"
+                                   id="is_no_cr_num1" value="1" required>
+                            <label class="form-check-label pe-2 ps-5" for="is_no_cr_num1">نعم</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-reverse">
+                            <input class="form-check-input" type="radio" name="is_no_cr_num"
+                                   id="is_no_cr_num" value="0">
+                            <label class="form-check-label pe-2 ps-5" for="is_no_cr_num">لا</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-4" id="c_r_num">
+                <div class="mb-4" id="c_r_num_dev">
                     <label for="c_r_num" class="form-label">رقم السجل التجارى</label>
 
                     <input type="number" required name="c_r_num" value="{{old('c_r_num')}}" class="form-control"
@@ -113,21 +127,29 @@
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_employee"
                                    id="workTypeInlineRadio1" value="1" required>
-                            <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">قطاع
-                                خاص</label>
+                            <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">نعم</label>
                         </div>
                         <div class="form-check form-check-inline form-check-reverse">
                             <input class="form-check-input" type="radio" name="is_employee"
                                    id="workTypeInlineRadio2" value="0">
-                            <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio2">
-                                قطاع حكومى</label>
+                            <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio2">لا</label>
                         </div>
                     </div>
                 </div>
-                <div class="mb-4">
+                <div class="mb-4" id="is_emp">
                     <label for="company_name" class="form-label">اسم الجهة او الشركة</label>
                     <input type="text" name="company_name" class="form-control" id="company_name"
                            placeholder="" value="{{old('company_name')}}">
+                </div>
+
+                <div class="mb-4">
+                    <label for="salary" class="form-label">الدخل الشهري </label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-currency">ر.س</span>
+                        <input type="number" required name="salary" class="form-control"
+                               placeholder="الدخل الشهري" aria-label="currency"
+                               aria-describedby="addon-currency" id="salary" value="{{old('salary')}}">
+                    </div>
                 </div>
                 <div class="mb-4">
                     <label for="income_source" class="form-label">مصادر الدخل ؟ </label>
@@ -139,23 +161,38 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label for="salary" class="form-label">الدخل الشهري </label>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-currency">ر.س</span>
-                        <input type="number" required name="salary" class="form-control"
-                               placeholder="الدخل الشهري" aria-label="currency"
-                               aria-describedby="addon-currency" id="salary" value="{{old('salary')}}">
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="financial" class="form-label">الالتزامات المالية ؟ </label>
+                    <label for="financial" class="form-label">قيمة الالتزامات المالية ؟ </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="financial" class="form-control"
-                                  placeholder="برجاء كتابة الالتزامات المالية "
+                                  placeholder="برجاء كتابة قيمة الالتزامات المالية "
                                   aria-describedby="addon-currency" id="financial">{{old('financial')}}</textarea>
                     </div>
                 </div>
                 <div class="mb-4">
+                    <label for="financial" class="form-label">مصادر الالتزامات المالية ؟ </label>
+                    <div class="input-group flex-nowrap">
+                        <textarea type="number" required name="financial_source" class="form-control"
+                                  placeholder="برجاء كتابة مصادر الالتزامات المالية "
+                                  aria-describedby="addon-currency"
+                                  id="financial_source">{{old('financial_source')}}</textarea>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">هل لديك اي مشاريع قائمه او مملوكه ؟ </label>
+                    <div class="question ">
+                        <div class="form-check form-check-inline form-check-reverse">
+                            <input class="form-check-input" type="radio"
+                                   name="is_pro_owned" id="projects_ownedRadio1" value="1" required>
+                            <label class="form-check-label pe-2 ps-5" for="projects_ownedRadio1">نعم</label>
+                        </div>
+                        <div class="form-check form-check-inline form-check-reverse">
+                            <input class="form-check-input" type="radio"
+                                   name="is_pro_owned" id="projects_ownedRadio2" value="0">
+                            <label class="form-check-label pe-2 ps-5" for="projects_ownedRadio2">لا</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4" id="pro_owened">
                     <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة ؟ </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="projects_owned" class="form-control"
@@ -183,10 +220,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-4 d-flex flex-column">
+                <div class="mb-4" id="granted_brands_dev">
                     <p>إذا كان كذلك، فما هى؟</p>
                     <textarea name="granted_brands" class="form-control" rows="3"
-                              id="textareaQuestion">{{old('granted_brands')}} </textarea>
+                              id="granted_brands">{{old('granted_brands')}} </textarea>
                 </div>
                 <div class="mb-4">
                     <label for="how_know" class="form-label">ما مدى علمك بتمور المعلم؟</label>
@@ -217,12 +254,25 @@
                         </div>
                     </div>
                 </div>
+                <h4>يرجى تحديد المدن المقترحة للحصول على
+                    حقوق الامتياز بها؟
+                </h4>
                 <div class="mb-4">
-                    <label for="cities" class="form-label">يرجى تحديد المدن المقترحة للحصول على
-                        حقوق الامتياز بها؟
-                    </label>
-                    <textarea required name="cities" class="form-control"
-                              aria-describedby="addon-currency" id="income_source">{{old('cities')}}</textarea>
+                    <label for="cities" class="form-label">المدينة الاولى </label>
+                    <input required name="cities1" class="form-control"
+                           aria-describedby="addon-currency" id="income_source" value="{{old('cities1')}}">
+                </div>
+                <div class="mb-4">
+                    <label for="cities" class="form-label">المدينة الثانية </label>
+
+                    <input name="cities2" class="form-control"
+                           aria-describedby="addon-currency" id="income_source" value="{{old('cities2')}}">
+                </div>
+                <div class="mb-4">
+                    <label for="cities" class="form-label">المدينة الثالثه </label>
+
+                    <input name="cities3" class="form-control"
+                           aria-describedby="addon-currency" id="income_source" value="{{old('cities3')}}">
                 </div>
                 <div class="mb-4">
                     <label class="form-label">هل انت على استعداد تام على متابعة وتشغيل المشروع في حالة اعتماد
@@ -264,7 +314,7 @@
                         <input class="form-check-input" type="checkbox" required name="approved"
                                value="1" id="delegateCheck">
                         <label class="form-label" for="delegateCheck">
-                            اقر علي صحة البيانات
+                            اقر علي صحة كافة المعلومات
                         </label>
                     </div>
                 </div>

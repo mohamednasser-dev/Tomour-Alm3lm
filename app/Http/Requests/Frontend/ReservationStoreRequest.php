@@ -49,16 +49,20 @@ class ReservationStoreRequest extends FormRequest
             'how_satisfied' => 'required|string|max:2000',
 
             'is_rights' => 'required|in:1,0',
+            'is_pro_owned' => 'required|in:1,0',
             'is_follow' => 'required|in:1,0',
             'is_financial' => 'required|in:1,0',
-            'company_name' => 'required|string|max:255',
+            'company_name' => 'nullable|string|max:255',
             'salary' => 'required|numeric',
             'have_granted_brand' => 'required|in:1,0',
             'granted_brands' => 'nullable|string|max:2000',
-            'cities' => 'required|string|max:2000',
+            'cities1' => 'required|string|max:2000',
+            'cities2' => 'nullable|string|max:2000',
+            'cities3' => 'nullable|string|max:2000',
             'income_source' => 'required|string|max:2000',
             'financial' => 'required|string|max:2000',
-            'projects_owned' => 'required|string|max:2000',
+            'projects_owned' => 'nullable|string|max:2000',
+            'financial_source' => 'required|string|max:2000',
 
         ];
     }

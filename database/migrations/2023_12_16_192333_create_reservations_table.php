@@ -24,12 +24,12 @@ return new class extends Migration {
             $table->string('government');
             $table->tinyInteger('is_lawsuit')->default(0);
             $table->tinyInteger('is_employee')->default(0);
-            $table->text('how_know');
+            $table->text('how_know')->nullable();
             $table->text('how_satisfied');
             $table->tinyInteger('is_rights')->default(0);
             $table->tinyInteger('is_follow')->default(0);
             $table->tinyInteger('is_financial')->default(0);
-            $table->string('company_name');
+            $table->string('company_name')->nullable();
             $table->integer('salary')->default(0);
             $table->integer('rewards')->default(0);
             $table->integer('dividends_interest')->default(0);

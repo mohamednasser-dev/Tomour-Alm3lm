@@ -20,14 +20,14 @@
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/main.css">
     <title> شركة تمور المعلم</title>
     <style>
-        label{
-            font-size: 18px!important;
+        label {
+            font-size: 18px !important;
             /*font-weight: bold!important;*/
             content: " *";
             /*color: red;*/
         }
 
-        .form-label::after{
+        .form-label::after {
             content: " *";
             color: red;
         }
@@ -39,15 +39,15 @@
 <!-- start home -->
 <section id="home">
     <div class="slider">
-        <h3>الإمتياز التجاري</h3>
-        <h1>استمارة التقديم</h1>
+        {{--        <h3>الإمتياز التجاري</h3>--}}
+        {{--        <h1>استمارة التقديم</h1>--}}
         <br>
         <br>
         <br>
         <br>
     </div>
     <div class="content">
-        <div class="container" id="container_div" >
+        <div class="container" id="container_div">
             @yield('content')
         </div>
     </div>
@@ -81,16 +81,82 @@
         });
 
 
-        // Get the checkbox element
+        // Get the CRM element
         var checkbox = document.getElementById('is_no_cr_num');
-        checkbox.addEventListener('change', function() {
+        checkbox.addEventListener('change', function () {
             if (checkbox.checked) {
-                $('#c_r_num').hide();
+                $('#c_r_num_dev').hide();
                 $('#c_r_num').val('');
                 document.getElementById('c_r_num').removeAttribute('required');
             } else {
-                $('#c_r_num').show();
-                document.getElementById('c_r_num').setAttribute('required','true');
+                $('#c_r_num_dev').show();
+                document.getElementById('c_r_num').setAttribute('required', 'true');
+            }
+        });
+
+        // Get the CRM element
+        var checkbox1 = document.getElementById('is_no_cr_num1');
+        checkbox1.addEventListener('change', function () {
+            if (checkbox1.checked) {
+                $('#c_r_num_dev').show();
+                document.getElementById('c_r_num').setAttribute('required', 'true');
+            }
+        });
+
+        // Get the emp element
+        var workTypeInlineRadio2 = document.getElementById('workTypeInlineRadio2');
+        workTypeInlineRadio2.addEventListener('change', function () {
+            if (workTypeInlineRadio2.checked) {
+                $('#is_emp').hide();
+                $('#company_name').val('');
+                document.getElementById('company_name').removeAttribute('required');
+            }
+        });
+
+        var workTypeInlineRadio1 = document.getElementById('workTypeInlineRadio1');
+        workTypeInlineRadio1.addEventListener('change', function () {
+            if (workTypeInlineRadio1.checked) {
+                $('#is_emp').show();
+                document.getElementById('company_name').setAttribute('required', 'true');
+            }
+        });
+
+
+        // Get the project owened element
+        var projects_ownedRadio2 = document.getElementById('projects_ownedRadio2');
+        projects_ownedRadio2.addEventListener('change', function () {
+            if (projects_ownedRadio2.checked) {
+                $('#pro_owened').hide();
+                $('#projects_owned').val('');
+                document.getElementById('projects_owned').removeAttribute('required');
+            }
+        });
+
+        var projects_ownedRadio1 = document.getElementById('projects_ownedRadio1');
+        projects_ownedRadio1.addEventListener('change', function () {
+            if (projects_ownedRadio1.checked) {
+                $('#pro_owened').show();
+                document.getElementById('projects_owned').setAttribute('required', 'true');
+            }
+        });
+
+        // Get the project granted_brands element
+        var relocateInlineRadio2 = document.getElementById('relocateInlineRadio2');
+
+        relocateInlineRadio2.addEventListener('change', function () {
+
+            if (relocateInlineRadio2.checked) {
+                $('#granted_brands_dev').hide();
+                $('#granted_brands').val('');
+                document.getElementById('granted_brands').removeAttribute('required');
+            }
+        });
+
+        var relocateInlineRadio1 = document.getElementById('relocateInlineRadio1');
+        relocateInlineRadio1.addEventListener('change', function () {
+            if (relocateInlineRadio1.checked) {
+                $('#granted_brands').show();
+                document.getElementById('granted_brands').setAttribute('required', 'true');
             }
         });
 

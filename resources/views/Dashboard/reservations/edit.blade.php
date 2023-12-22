@@ -177,33 +177,25 @@
                                         <input class="form-check-input" type="radio" name="is_employee"
                                                disabled @if($data->is_employee == 1) checked
                                                @endif id="workTypeInlineRadio1" value="1">
-                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">قطاع
-                                            خاص</label>
+                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">نعم</label>
                                     </div>
                                     <div class="form-check form-check-inline form-check-reverse">
                                         <input class="form-check-input" type="radio" name="is_employee"
                                                disabled @if($data->is_employee == 0) checked
                                                @endif id="workTypeInlineRadio2" value="0">
-                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio2">
-                                            قطاع حكومى</label>
+                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio2">لا</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-4">
-                                <label for="company_name" class="form-label">اسم الجهة او الشركة</label>
-                                <input type="text" readonly value="{{$data->company_name}}" name="company_name"
-                                       class="form-control" id="company_name"
-                                       placeholder="">
-                            </div>
-                            <div class="mb-4">
-                                <label for="income_source" class="form-label">مصادر الدخل ؟ </label>
-                                <div class="input-group flex-nowrap">
-                            <textarea readonly required name="income_source" class="form-control"
-                                      placeholder="برجاء تحديد مصادر الدخل الشهرية"
-                                      aria-describedby="addon-currency"
-                                      id="income_source">{{$data->income_source}}</textarea>
+                            @if($data->is_employee == 1)
+                                <div class="mb-4">
+                                    <label for="company_name" class="form-label">اسم الجهة او الشركة</label>
+                                    <input type="text" readonly value="{{$data->company_name}}" name="company_name"
+                                           class="form-control" id="company_name"
+                                           placeholder="">
                                 </div>
-                            </div>
+                            @endif
+
                             <div class="mb-4">
                                 <label for="salary" class="form-label">الدخل الشهري </label>
                                 <div class="input-group flex-nowrap">
@@ -215,7 +207,17 @@
                                 </div>
                             </div>
                             <div class="mb-4">
-                                <label for="financial" class="form-label">الالتزامات المالية ؟ </label>
+                                <label for="income_source" class="form-label">مصادر الدخل ؟ </label>
+                                <div class="input-group flex-nowrap">
+                            <textarea readonly required name="income_source" class="form-control"
+                                      placeholder="برجاء تحديد مصادر الدخل الشهرية"
+                                      aria-describedby="addon-currency"
+                                      id="income_source">{{$data->income_source}}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="financial" class="form-label">قيمة الالتزامات المالية ؟ </label>
                                 <div class="input-group flex-nowrap">
                         <textarea type="number" required name="financial" class="form-control"
                                   placeholder="برجاء كتابة الالتزامات المالية "
@@ -224,14 +226,43 @@
                                 </div>
                             </div>
                             <div class="mb-4">
-                                <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة ؟ </label>
+                                <label for="financial" class="form-label">مصادر الالتزامات المالية ؟ </label>
                                 <div class="input-group flex-nowrap">
+                        <textarea type="number" readonly name="financial_source" class="form-control"
+                                  placeholder="برجاء كتابة مصادر الالتزامات المالية "
+                                  aria-describedby="addon-currency"
+                                  id="financial_source">{{$data->financial_source}}</textarea>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">هل لديك اي مشاريع قائمه او مملوكه ؟ </label>
+                                <div class="question ">
+                                    <div class="form-check form-check-inline form-check-reverse">
+                                        <input class="form-check-input" type="radio" name="is_employee"
+                                               disabled @if($data->is_pro_owned == 1) checked
+                                               @endif id="workTypeInlineRadio1" value="1">
+                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio1">نعم</label>
+                                    </div>
+                                    <div class="form-check form-check-inline form-check-reverse">
+                                        <input class="form-check-input" type="radio" name="is_employee"
+                                               disabled @if($data->is_pro_owned == 0) checked
+                                               @endif id="workTypeInlineRadio2" value="0">
+                                        <label class="form-check-label pe-2 ps-5" for="workTypeInlineRadio2">لا</label>
+                                    </div>
+                                </div>
+                            </div>
+                            @if($data->is_pro_owned == 1)
+                                <div class="mb-4">
+                                    <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة
+                                        ؟ </label>
+                                    <div class="input-group flex-nowrap">
                         <textarea type="number" required name="projects_owned" class="form-control"
                                   readonly placeholder="برجاء كتابة المشاريع المملوكة و القائمة "
                                   aria-describedby="addon-currency"
                                   id="projects_owned">{{$data->projects_owned}}</textarea>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
 
                             <div class="mb-4">
                                 <label for="projects_owned" class="form-label">هل تم منحك حقوق الامتياز لاي علامة تجارية
@@ -254,11 +285,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-4 d-flex flex-column">
-                                <p>إذا كان كذلك، فما هى؟</p>
-                                <textarea name="granted_brands" class="form-control" rows="3"
-                                          readonly id="textareaQuestion">{{$data->granted_brands}}</textarea>
-                            </div>
+                            @if($data->have_granted_brand == 1)
+                                <div class="mb-4 d-flex flex-column">
+                                    <p>إذا كان كذلك، فما هى؟</p>
+                                    <textarea name="granted_brands" class="form-control" rows="3"
+                                              readonly id="textareaQuestion">{{$data->granted_brands}}</textarea>
+                                </div>
+                            @endif
                             <div class="mb-4">
                                 <label for="how_know" class="form-label">ما مدى علمك بتمور المعلم؟</label>
                                 <input type="text" readonly value="{{$data->how_know}}" required name="how_know"
@@ -288,12 +321,25 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4> المدن المقترحة للحصول على
+                                حقوق الامتياز بها؟
+                            </h4>
                             <div class="mb-4">
-                                <label for="country-name" class="form-label">يرجى تحديد المدن المقترحة للحصول على
-                                    حقوق الامتياز بها؟
-                                </label>
-                                <textarea name="granted_brands" class="form-control" rows="3"
-                                          readonly id="textareaQuestion">{{$data->cities}}</textarea>
+                                <label for="cities" class="form-label">المدينة الاولى </label>
+                                <input required name="cities1" class="form-control"
+                                       aria-describedby="addon-currency" id="income_source" value="{{$data->cities1}}">
+                            </div>
+                            <div class="mb-4">
+                                <label for="cities" class="form-label">المدينة الثانية </label>
+
+                                <input name="cities2" class="form-control"
+                                       aria-describedby="addon-currency" id="income_source" value="{{$data->cities2}}">
+                            </div>
+                            <div class="mb-4">
+                                <label for="cities" class="form-label">المدينة الثالثه </label>
+
+                                <input name="cities3" class="form-control"
+                                       aria-describedby="addon-currency" id="income_source" value="{{$data->cities3}}">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">هل انت على استعداد تام على متابعة وتشغيل المشروع في حالة

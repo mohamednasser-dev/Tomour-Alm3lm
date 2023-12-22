@@ -13,11 +13,9 @@ return new class extends Migration {
     public function up()
     {
         Schema::table('reservations', function (Blueprint $table) {
-            $table->dropForeign('reservations_city_id_foreign');
-            $table->dropColumn('city_id');
-            $table->text('cities1');
-            $table->text('cities2')->nullable();
-            $table->text('cities3')->nullable();
+
+            $table->text('financial_source')->nullable()->after("financial");
+            $table->tinyInteger('is_pro_owned')->nullable()->after("projects_owned");
         });
     }
 
@@ -28,8 +26,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::table('reservations', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

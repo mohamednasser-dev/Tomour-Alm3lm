@@ -37,7 +37,7 @@ return new class extends Migration
             $table->dropColumn('net_worth');
             $table->text('income_source');
             $table->text('financial');
-            $table->text('projects_owned');
+            $table->text('projects_owned')->nullable();
             $table->string('c_r_num')->nullable()->change();
 
 
