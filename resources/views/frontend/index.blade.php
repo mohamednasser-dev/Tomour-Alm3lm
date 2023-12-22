@@ -314,7 +314,7 @@
                         <input class="form-check-input" type="checkbox" required name="approved"
                                value="1" id="delegateCheck">
                         <label class="form-label" for="delegateCheck">
-                            اوافق واقر علي صحة كافة المعلومات
+                            أوافق وأقر علي صحة كافة المعلومات
                         </label>
                     </div>
                 </div>
