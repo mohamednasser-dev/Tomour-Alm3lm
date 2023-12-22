@@ -60,10 +60,10 @@
 {{--                                            <input class="form-check-input" type="checkbox" name="is_employee"--}}
 {{--                                                   id="rightsInlineRadio1" value="1"--}}
 {{--                                                   @if(request()->is_employee) checked @endif>--}}
-                                            <select name="is_employee" required class="form-select"
+                                            <select name="is_employee"  class="form-select"
                                                     aria-label="Small select example"
                                                     id="">
-                                                <option selected >-- الكل   --</option>
+                                                <option selected value="">-- الكل   --</option>
                                                 <option @if(request()->is_employee == "1") selected @endif  value="1">موظف </option>
                                                 <option @if(request()->is_employee == "0") selected @endif  value="0">غير موظف </option>
 
@@ -79,10 +79,10 @@
 {{--                                            <input class="form-check-input" type="checkbox" name="c_r_num"--}}
 {{--                                                   id="rightsInlineRadio2" value="1"--}}
 {{--                                                   @if(request()->c_r_num) checked @endif>--}}
-                                            <select name="c_r_num" required class="form-select"
+                                            <select name="c_r_num"  class="form-select"
                                                     aria-label="Small select example"
                                                     id="">
-                                                <option selected >-- الكل   --</option>
+                                                <option selected value="">-- الكل   --</option>
                                                 <option @if(request()->c_r_num == "1") selected @endif  value="1">يوجد سجل تجاري </option>
                                                 <option @if(request()->c_r_num == "0") selected @endif  value="0">لا سجل تجاري </option>
 
@@ -98,10 +98,10 @@
 {{--                                            <input class="form-check-input" type="checkbox" name="is_lawsuit"--}}
 {{--                                                   id="rightsInlineRadio3" value="1"--}}
 {{--                                                   @if(request()->is_lawsuit) checked @endif>--}}
-                                            <select name="is_lawsuit" required class="form-select"
+                                            <select name="is_lawsuit"  class="form-select"
                                                     aria-label="Small select example"
                                                     id="">
-                                                <option selected >-- الكل   --</option>
+                                                <option selected value="">-- الكل   --</option>
                                                 <option @if(request()->is_lawsuit == "1") selected @endif  value="1">يوجد دعوي قضائية </option>
                                                 <option @if(request()->is_lawsuit == "0") selected @endif  value="0">لا دعوي قضائية </option>
 
@@ -117,10 +117,10 @@
 {{--                                            <input class="form-check-input" type="checkbox" name="is_rights"--}}
 {{--                                                   id="rightsInlineRadio4" value="1"--}}
 {{--                                                   @if(request()->is_rights) checked @endif>--}}
-                                            <select name="is_rights" required class="form-select"
+                                            <select name="is_rights"  class="form-select"
                                                     aria-label="Small select example"
                                                     id="">
-                                                <option selected >-- الكل   --</option>
+                                                <option selected value="">-- الكل   --</option>
                                                 <option @if(request()->is_rights == "1") selected @endif  value="1">نعم  </option>
                                                 <option @if(request()->is_rights == "0") selected @endif  value="0">لا  </option>
 

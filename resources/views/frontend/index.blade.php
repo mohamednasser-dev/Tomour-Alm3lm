@@ -161,7 +161,7 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label for="financial" class="form-label">قيمة الالتزامات المالية ؟ </label>
+                    <label for="financial" class="form-label">ماهي قيمة الالتزامات المالية ؟ </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="financial" class="form-control"
                                   placeholder="برجاء كتابة قيمة الالتزامات المالية "
@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label for="financial" class="form-label">مصادر الالتزامات المالية ؟ </label>
+                    <label for="financial" class="form-label">ماهي مصادر الالتزامات المالية ؟ </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number" required name="financial_source" class="form-control"
                                   placeholder="برجاء كتابة مصادر الالتزامات المالية "
@@ -193,7 +193,7 @@
                     </div>
                 </div>
                 <div class="mb-4" id="pro_owened" style="display: none;">
-                    <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة ؟ </label>
+                    <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة  </label>
                     <div class="input-group flex-nowrap">
                         <textarea type="number"  name="projects_owned" class="form-control"
                                   placeholder="برجاء كتابة المشاريع المملوكة و القائمة "

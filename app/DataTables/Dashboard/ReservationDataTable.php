@@ -28,23 +28,23 @@ class ReservationDataTable extends DataTable
     public function query(Reservation $model, Request $request)
     {
         $q = $model->newQuery();
-        if (isset($request->is_employee)) {
+        if (isset($request->is_employee) && $request->is_employee != null) {
             $q->where("is_employee", $request->is_employee);
         }
-        if (isset($request->is_lawsuit)) {
+        if (isset($request->is_lawsuit) && $request->is_lawsuit != null) {
             $q->where("is_lawsuit", 1);
         }
-        if (isset($request->c_r_num)) {
+        if (isset($request->c_r_num) && $request->c_r_num != null) {
             if ($request->c_r_num == 0) {
                 $q->whereNull("c_r_num");
             } else {
                 $q->whereNotNull("c_r_num");
             }
         }
-        if (isset($request->is_rights)) {
-            if (isset($request->is_rights)) {
-                $q->where("is_rights", $request->is_rights);
-            }
+        if (isset($request->is_rights) && $request->is_rights != null) {
+
+            $q->where("is_rights", $request->is_rights);
+
 
         }
         return $q;
