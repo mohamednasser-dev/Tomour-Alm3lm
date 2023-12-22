@@ -21,7 +21,7 @@
         @include('adminLayouts.errors')
         @include('adminLayouts.messages')
         <div class="form-body py-5">
-            <h2 style="color: @if($reservation->status == "rejected") red; @elseif($reservation->status == "accepted") green; @else orange;@endif">
+            <h2 style="color: @if($reservation)@if($reservation->status == "rejected") red; @elseif($reservation->status == "accepted") green; @else orange;@endif@endif">
             {{$msg}}
             </h2>
         </div>
