@@ -75,10 +75,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-4" id="c_r_num_dev">
+                <div class="mb-4" id="c_r_num_dev" style="display: none;">
                     <label for="c_r_num" class="form-label">رقم السجل التجارى</label>
 
-                    <input type="number" required name="c_r_num" value="{{old('c_r_num')}}" class="form-control"
+                    <input type="number"  name="c_r_num" value="{{old('c_r_num')}}" class="form-control"
                            id="c_r_num"
                            placeholder="ادخل رقم السجل التجارى ">
                 </div>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-4" id="is_emp">
+                <div class="mb-4" id="is_emp" style="display: none;">
                     <label for="company_name" class="form-label">اسم الجهة او الشركة</label>
                     <input type="text" name="company_name" class="form-control" id="company_name"
                            placeholder="" value="{{old('company_name')}}">
@@ -192,10 +192,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-4" id="pro_owened">
+                <div class="mb-4" id="pro_owened" style="display: none;">
                     <label for="projects_owned" class="form-label">المشاريع المملوكة و القائمة ؟ </label>
                     <div class="input-group flex-nowrap">
-                        <textarea type="number" required name="projects_owned" class="form-control"
+                        <textarea type="number"  name="projects_owned" class="form-control"
                                   placeholder="برجاء كتابة المشاريع المملوكة و القائمة "
                                   aria-describedby="addon-currency"
                                   id="projects_owned">{{old('projects_owned')}}</textarea>
@@ -220,7 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-4" id="granted_brands_dev">
+                <div class="mb-4" id="granted_brands_dev" style="display: none;">
                     <p>إذا كان كذلك، فما هى؟</p>
                     <textarea name="granted_brands" class="form-control" rows="3"
                               id="granted_brands">{{old('granted_brands')}} </textarea>
