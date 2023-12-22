@@ -63,6 +63,6 @@ class HomeController extends Controller
         }else{
             $msg =  'الطلب غير موجود' ;
         }
-        return  view('frontend.search_result',compact('msg'));
+        return  view('frontend.search_result',compact('msg','reservation'));
     }
 }

@@ -17,11 +17,13 @@
                 </div>
             </div>
         </div>
-    
+
         @include('adminLayouts.errors')
         @include('adminLayouts.messages')
         <div class="form-body py-5">
+            <h2 style="color: @if($reservation->status == "rejected") red; @elseif($reservation->status == "accepted") green; @else orange;@endif">
             {{$msg}}
+            </h2>
         </div>
     </form>
 @endsection

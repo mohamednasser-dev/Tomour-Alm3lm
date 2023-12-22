@@ -155,7 +155,7 @@
         var relocateInlineRadio1 = document.getElementById('relocateInlineRadio1');
         relocateInlineRadio1.addEventListener('change', function () {
             if (relocateInlineRadio1.checked) {
-                $('#granted_brands').show();
+                $('#granted_brands_dev').show();
                 document.getElementById('granted_brands').setAttribute('required', 'true');
             }
         });

@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('Dashboard.home');
+        return redirect(url('admin/reservations'));
     }
 
 }

@@ -12,7 +12,7 @@
                 @csrf
             <div>
                 <label for="code" class="form-label">رقم الهوية :</label>
-                <input type="text" class="form-control" id="search" name="search" required />
+                <input type="number"  pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" class="form-control" id="search" name="search" required />
             </div>
             <div class="row row-code" style="margin-top: 25px;justify-content: center;">
 
