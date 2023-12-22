@@ -5,15 +5,15 @@
          data-menu-dropdown-timeout="500">
         <!--begin::Menu Nav-->
         <ul class="menu-nav">
-            <li class="menu-item @if(request()->segment(3) == 'dashboard') menu-item-active  @endif"
-                aria-haspopup="true">
-                <a href="{{route('dashboard')}}" class="menu-link">
-                    <i class="menu-icon flaticon-home">
-                        <span></span>
-                    </i>
-                    <span class="menu-text">{{__('lang.home')}}</span>
-                </a>
-            </li>
+{{--            <li class="menu-item @if(request()->segment(3) == 'dashboard') menu-item-active  @endif"--}}
+{{--                aria-haspopup="true">--}}
+{{--                <a href="{{route('dashboard')}}" class="menu-link">--}}
+{{--                    <i class="menu-icon flaticon-home">--}}
+{{--                        <span></span>--}}
+{{--                    </i>--}}
+{{--                    <span class="menu-text">{{__('lang.home')}}</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             @can('read-admins')
                 <li class="menu-item menu-item-submenu @if(request()->segment(3) == 'admins') menu-item-open @endif "
                     aria-haspopup="true" data-menu-toggle="hover">
