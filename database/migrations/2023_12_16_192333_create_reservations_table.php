@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->bigInteger('id_number');
             $table->string('phone')->unique();
             $table->string('email')->unique();
-            $table->string('c_r_num')->unique()->comment('رقم السجل التجارى');
+            $table->string('c_r_num')->comment('رقم السجل التجارى');
             $table->string('address');
             $table->string('city');
             $table->string('government');
