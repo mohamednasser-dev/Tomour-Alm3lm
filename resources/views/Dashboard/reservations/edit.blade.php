@@ -119,13 +119,7 @@
                             <div class="mb-4">
                                 <label for="phone" class="form-label">رقم الجوال</label>
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1" style="height: 40px">
-                                <img src="{{url('assets/media/svg/flags/008-saudi-arabia.svg')}}" alt="KSA Flag"
-                                     width="20"
-                                     height="auto">
-                            </span>
-                                    </div>
+                                    
                                     <input type="text" readonly value="{{$data->phone}}" required name="phone"
                                            class="form-control" id="phone"
                                            placeholder="ادخل رقم الجوال">
