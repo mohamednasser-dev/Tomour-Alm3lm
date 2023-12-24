@@ -61,6 +61,10 @@
                                                     aria-label="Small select example"
                                                     id="">
                                                 <option selected value="">-- الكل --</option>
+                                                <option @if(request()->status == "pending") selected
+                                                        @endif  value="pending">
+                                                    قيد الانتظار
+                                                </option>
                                                 <option @if(request()->status == "accepted") selected
                                                         @endif  value="accepted">
                                                     مقبول
@@ -71,7 +75,7 @@
 
                                             </select>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <div class="mb-4">
                                         &nbsp;&nbsp;
                                         <div class="form-check form-check-inline form-check-reverse">
