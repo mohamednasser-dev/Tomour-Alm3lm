@@ -42,10 +42,10 @@ class ReservationDataTable extends DataTable
             }
         }
         if (isset($request->is_rights) && $request->is_rights != null) {
-
             $q->where("is_rights", $request->is_rights);
-
-
+        }
+        if (isset($request->status) && $request->status != null) {
+            $q->where("status", $request->status);
         }
         return $q;
     }
