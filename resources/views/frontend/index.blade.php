@@ -40,17 +40,47 @@
                     <label for="phone" class="form-label">رقم الجوال</label>
                     {{--                    <input type="num" required name="phone" class="form-control" id="phone"--}}
                     {{--                           placeholder="ادخل رقم الجوال ">--}}
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1" style="height: 40px">
-                                <img src="{{url('assets/media/svg/flags/008-saudi-arabia.svg')}}" alt="KSA Flag"
-                                     width="20"
-                                     height="auto">
-                            </span>
+                    <div class="input-group row">
+                        <div class="col-md-2">
+{{--                            vodiapicker--}}
+
+                            <select class="form-control js-example-basic-single" style="width: 100%; height: 100%;" name="country_code" required>
+                                <option value="+966" data-image="{{url('assets/media/svg/flags/008-saudi-arabia.svg')}}">+966</option>
+                                <option value="+971" data-image="{{url('assets/media/svg/flags/151-united-arab-emirates.svg')}}">+971</option>
+                                <option value="+973" data-image="{{url('assets/media/svg/flags/138-bahrain.svg')}}">+973</option>
+                                <option value="+974" data-image="{{url('assets/media/svg/flags/026-qatar.svg')}}">+974</option>
+                                <option value="+968" data-image="{{url('assets/media/svg/flags/004-oman.svg')}}">+968</option>
+                                <option value="+965" data-image="{{url('assets/media/svg/flags/107-kwait.svg')}}">+965</option>
+                                <option value="+964" data-image="{{url('assets/media/svg/flags/020-iraq.svg')}}">+964</option>
+
+                            </select>
+
+
+{{--                            <select class=" form-control ">--}}
+{{--                                <option value="+966" class="test" data-thumbnail="{{url('assets/media/svg/flags/008-saudi-arabia.svg')}}"--}}
+{{--                                        style="background-image:url({{url('assets/media/svg/flags/008-saudi-arabia.svg')}});" >--}}
+{{--                                    <img src="{{url('assets/media/svg/flags/008-saudi-arabia.svg')}}">السعودية</option>--}}
+{{--                                <option value="+971" class="test" data-thumbnail="{{url('assets/media/svg/flags/151-united-arab-emirates.svg')}}">الامرات</option>--}}
+{{--                                <option value="+973" class="test" data-thumbnail="{{url('assets/media/svg/flags/138-bahrain.svg')}}">البحرين</option>--}}
+{{--                                <option value="+974" class="test" data-thumbnail="{{url('assets/media/svg/flags/026-qatar.svg')}}">قطر</option>--}}
+{{--                                <option value="+968" class="test" data-thumbnail="{{url('assets/media/svg/flags/004-oman.svg')}}">عمان</option>--}}
+{{--                                <option value="+965" class="test" data-thumbnail="{{url('assets/media/svg/flags/107-kwait.svg')}}">الكويت</option>--}}
+{{--                                <option value="+964" class="test" data-thumbnail="{{url('assets/media/svg/flags/020-iraq.svg')}}">العراق</option>--}}
+{{--                            </select>--}}
+
+{{--                            <div class="lang-select">--}}
+{{--                                <button class="btn-select" value=""></button>--}}
+{{--                                <div class="b">--}}
+{{--                                    <ul id="a"></ul>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                         </div>
-                        <input type="number" required name="phone" class="form-control" id="phone"
-                               pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;"
-                               placeholder="ادخل رقم الجوال" value="{{old('phone')}}">
+                        <div class="col-md-10">
+                            <input type="number" required name="phone" class="form-control" id="phone"
+                                   pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;"
+                                   placeholder="ادخل رقم الجوال" value="{{old('phone')}}">
+                        </div>
+
                     </div>
                 </div>
                 <div class="mb-4">

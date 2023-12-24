@@ -42,6 +42,7 @@ class ReservationStoreRequest extends FormRequest
                 'nullable',
                 Rule::unique('reservations', 'c_r_num')
             ],
+            'country_code' => 'required',
             'address' => 'required|string|max:255',
             'is_lawsuit' => 'required|in:1,0',
             'is_employee' => 'required|in:1,0',

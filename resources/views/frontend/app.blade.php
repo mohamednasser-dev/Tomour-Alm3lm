@@ -18,6 +18,8 @@
           rel="stylesheet">
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/all.min.css">
     <link rel="stylesheet" href="{{url('/')}}/frontend/css/main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
     <title> شركة تمور المعلم</title>
     <style>
         label {
@@ -31,7 +33,98 @@
             content: " *";
             color: red;
         }
+/*For country code*/
+        .vodiapicker{
+            display: none;
+        }
 
+        #a{
+            padding-left: 0px;
+        }
+
+        #a img, .btn-select img{
+            width: 12px;
+
+        }
+
+        #a li{
+            list-style: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #a li:hover{
+            background-color: #F4F3F3;
+        }
+
+        #a li img{
+            margin: 5px;
+        }
+
+        #a li span, .btn-select li span{
+            margin-left: 30px;
+        }
+
+        /* item list */
+
+        .b{
+            display: none;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 5px;
+
+        }
+
+        .open{
+            display: show !important;
+        }
+
+        .btn-select{
+            margin-top: 10px;
+            width: 100%;
+            max-width: 350px;
+            height: 34px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+
+        }
+        .btn-select li{
+            list-style: none;
+            float: left;
+            padding-bottom: 0px;
+        }
+
+        .btn-select:hover li{
+            margin-left: 0px;
+        }
+
+        .btn-select:hover{
+            background-color: #F4F3F3;
+            border: 1px solid transparent;
+            box-shadow: inset 0 0px 0px 1px #ccc;
+
+
+        }
+
+        .btn-select:focus{
+            outline:none;
+        }
+
+        .lang-select{
+            margin-left: 50px;
+        }
+
+
+    </style>
+    <style>
+        .img-flag {
+            width: 20px; /* Adjust the width as needed */
+            height: 20px; /* Adjust the height as needed */
+            margin-right: 10px; /* Adjust the spacing between image and text */
+        }
     </style>
 </head>
 
@@ -162,6 +255,77 @@
 
     });
 
+    // For country code
+    //test for getting url value from attr
+    // var img1 = $('.test').attr("data-thumbnail");
+    // console.log(img1);
+
+    //test for iterating over child elements
+    var langArray = [];
+    $('.vodiapicker option').each(function(){
+        var img = $(this).attr("data-thumbnail");
+        var text = this.innerText;
+        var value = $(this).val();
+        var item = '<li><img src="'+ img +'" alt="" value="'+value+'"/><span>'+ text +'</span></li>';
+        langArray.push(item);
+    })
+
+    $('#a').html(langArray);
+
+    //Set the button value to the first el of the array
+    $('.btn-select').html(langArray[0]);
+    $('.btn-select').attr('value', 'en');
+
+    //change button stuff on click
+    $('#a li').click(function(){
+        var img = $(this).find('img').attr("src");
+        var value = $(this).find('img').attr('value');
+        var text = this.innerText;
+        var item = '<li><img src="'+ img +'" alt="" /><span>'+ text +'</span></li>';
+        $('.btn-select').html(item);
+        $('.btn-select').attr('value', value);
+        $(".b").toggle();
+        //console.log(value);
+    });
+
+    $(".btn-select").click(function(){
+        $(".b").toggle();
+    });
+
+    //check local storage for the lang
+    var sessionLang = localStorage.getItem('lang');
+    if (sessionLang){
+        //find an item with value of sessionLang
+        var langIndex = langArray.indexOf(sessionLang);
+        $('.btn-select').html(langArray[langIndex]);
+        $('.btn-select').attr('value', sessionLang);
+    } else {
+        var langIndex = langArray.indexOf('ch');
+        console.log(langIndex);
+        $('.btn-select').html(langArray[langIndex]);
+        //$('.btn-select').attr('value', 'en');
+    }
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2({
+            templateResult: formatState
+        });
+    });
+
+    function formatState(state) {
+        if (!state.id) {
+            return state.text;
+        }
+        var $state = $(
+            '<span><img src="' + $(state.element).data('image') + '" class="img-flag" /> ' + state.text + '</span>'
+        );
+        return $state;
+    }
 </script>
 </body>
 
